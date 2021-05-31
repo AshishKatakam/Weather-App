@@ -1,24 +1,24 @@
 
-window.addEventListener('load',()=>{
-    let lat;
-    let long;
-    if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition
-        (pos=>{
-            lat=pos.coords.latitude;
-            long=pos.coords.longitude;
-            const api=`api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=6bf280c7484367b0a4d5ec85cc98f7c9`;
-            fetch(api).then((response)=>{
-                return response.json();
-            })
-            .then(data=>{
-                const {name}=data;
-                getWeather(name);
-            })
+// window.addEventListener('load',()=>{
+//     let lat;
+//     let long;
+//     if(navigator.geolocation){
+//         navigator.geolocation.getCurrentPosition
+//         (pos=>{
+//             lat=pos.coords.latitude;
+//             long=pos.coords.longitude;
+//             const api=`api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=6bf280c7484367b0a4d5ec85cc98f7c9`;
+//             fetch(api).then((response)=>{
+//                 return response.json();
+//             })
+//             .then(data=>{
+//                 const {name}=data;
+//                 getWeather(name);
+//             })
         
-        });
-    }
-});
+//         });
+//     }
+// });
 const inp=document.getElementById('inp')
 const btn=document.getElementById('btn')
 
